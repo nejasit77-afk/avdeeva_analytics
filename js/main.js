@@ -1,5 +1,5 @@
 // Номер счётчика Яндекс Метрики
-var METRIKA_ID = 113719924;
+var METRIKA_ID = 114019436;
 
 // Ключ, под которым запоминается выбор посетителя по cookies
 var CONSENT_KEY = 'cookie_consent';
@@ -27,13 +27,17 @@ function loadMetrika() {
     }
     k = e.createElement(t); a = e.getElementsByTagName(t)[0];
     k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
-  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=114019436', 'ym');
 
   ym(METRIKA_ID, 'init', {
+    ssr: true,
     clickmap: true,
     trackLinks: true,
     accurateTrackBounce: true,
-    webvisor: true
+    webvisor: true,
+    ecommerce: 'dataLayer',
+    referrer: document.referrer,
+    url: location.href
   });
 }
 
