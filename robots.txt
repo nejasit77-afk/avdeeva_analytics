@@ -18,4 +18,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://nejasit77-afk.github.io/avd-web/sitemap.xml
+Sitemap: https://avd-analytics.ru/sitemap.xml
