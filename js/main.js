@@ -59,7 +59,11 @@ function reachGoal(goal, params) {
 document.addEventListener('click', function (event) {
   var el = event.target.closest('[data-goal]');
   if (!el) return;
-  var params = el.dataset.service ? { service: el.dataset.service } : {};
+  if (el.matches('summary[data-goal="faq_open"]') && el.closest('details').open) return;
+  var params = {};
+  ['service', 'placement', 'publication', 'question'].forEach(function (key) {
+    if (el.dataset[key]) params[key] = el.dataset[key];
+  });
   reachGoal(el.dataset.goal, params);
 });
 

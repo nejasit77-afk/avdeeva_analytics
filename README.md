@@ -33,17 +33,21 @@ GitHub Pages публикует ветку `main` этого репозитор�
 
 ### Цели — создать в Метрике
 
-Метрика → **Цели** → **Добавить цель** → тип **JavaScript-событие** → идентификатор:
+Для каждой цели выберите **JavaScript-событие** и укажите идентификатор из таблицы. События передают параметры; их можно добавить как условия детализации в отчётах. Клик по заказу или контакту фиксирует намерение связаться, а не подтверждённую продажу: формы заказа на сайте нет.
 
 | Идентификатор | Когда срабатывает |
 |---|---|
-| `click_order` | Клик по любой кнопке «Заказать» / «Узнать подробнее». В параметре `service` — какая услуга |
-| `click_phone` | Клик по номеру телефона |
-| `click_email` | Клик по почте |
-| `click_telegram` | Клик по кнопке Telegram (в блоке контактов и «Бесплатная консультация 15 минут» на первом экране — у неё `service=hero_free_call`) |
-| `click_max` | Клик по кнопке MAX |
+| `click_order` | Нажатие на CTA заказа/аудита; параметр `service` показывает предложение |
+| `click_telegram` | Переход в Telegram: бесплатная консультация, чек-лист или контакт |
+| `click_max` | Переход в MAX |
+| `click_phone` | Нажатие на номер телефона |
+| `click_email` | Нажатие на адрес почты |
+| `click_publication` | Переход к одной из внешних публикаций; параметр `publication` различает статьи |
+| `faq_open` | Открытие вопроса FAQ; параметр `question` показывает тему. Закрытие вопроса повторное событие не отправляет |
 
-Значения параметра `service`: `hero_audit`, `hero_free_call`, `pains_cta` (оранжевая карточка «Узнали свою ситуацию?»), `sale_check`, `ux_review`, `year_report`, `checklist` (кнопка «Получить чек-лист» — цель `click_telegram`), `consultation`, `audit`, `setup`, `support`, `calls_review` (разбор звонков и переписок), `prices_free_call` (карточка «Не знаете, что выбрать?» в ценах — цель `click_telegram`).
+Параметр `service` для `click_order`: `hero_audit`, `sale_check`, `ux_review`, `year_report`, `pains_cta`, `consultation`, `audit`, `setup`, `support`, `calls_review`. Для Telegram-ссылок: `hero_free_call`, `checklist`, `prices_free_call`. Параметр `placement=contacts` помечает переходы из контактного блока.
+
+Значения `publication`: `tbank_new_year_sale`, `ingate_valentines_marketing`, `newretail_gender_marketing`, `newretail_february_gifts`, `newretail_march_8`. Значения `question`: `audit_price`, `audit_timing`, `metrika_password`, `metrika_crm_mismatch`, `analytics_setup`, `ga4_russia`, `call_reviews`, `work_location`.
 
 ## SEO и ИИ-ассистенты
 
